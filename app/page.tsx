@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
-import { Home as HomeIcon, Sun, Smile } from "lucide-react";
+import { useState } from "react";
+import { Home as HomeIcon, Sun, Smile, Calendar } from "lucide-react";
+import ReservaModal from "./components/ReservaModal";
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -36,6 +41,31 @@ export default function Home() {
               Nuestros Servicios
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Reserva Section */}
+      <section className="py-20 px-6 bg-stone-800 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
+            Reserva tu Estadía
+          </h2>
+          <p className="text-xl md:text-2xl mb-8 text-stone-200">
+            Alojamiento completo • 2 Habitaciones • Hasta 6 personas
+          </p>
+          <div className="mb-8">
+            <p className="text-5xl font-bold mb-4">$10,000/noche</p>
+            <p className="text-lg text-stone-300">
+              Incluye todas las comodidades y servicios
+            </p>
+          </div>
+          <button
+            onClick={() => setModalOpen(true)}
+            className="inline-flex items-center justify-center px-10 py-5 text-xl font-semibold text-stone-800 bg-white rounded-lg hover:bg-stone-100 transition-all shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
+          >
+            <Calendar className="w-6 h-6 mr-3" />
+            Reservar Ahora
+          </button>
         </div>
       </section>
 
@@ -86,6 +116,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Modal de Reserva */}
+      <ReservaModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        habitacion="Casa Campo Jorge - Alojamiento Completo"
+      />
     </div>
   );
 }

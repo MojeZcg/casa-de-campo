@@ -1,0 +1,112 @@
+import { Resend } from "resend";
+import { NextRequest, NextResponse } from "next/server";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const { nombre, email, telefono, mensaje } = body;
+
+    // Validar campos requeridos
+    if (!nombre || !email || !mensaje) {
+      return NextResponse.json(
+        { error: "Faltan campos requeridos" },
+        { status: 400 },
+      );
+    }
+
+    // Enviar email al administrador
+    const adminEmail = await resend.emails.send({
+      from: "Casa Campo Jorge <onboarding@resend.dev>",
+      to: "alojamientorural11@gmail.com",
+      subject: `Nuevo Mensaje de Contacto - ${nombre}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #292524; border-bottom: 2px solid #292524; padding-bottom: 10px;">
+            Nuevo Mensaje de Contacto
+          </h2>
+          
+          <div style="margin: 20px 0;">
+            <h3 style="color: #292524;">Información del Remitente</h3>
+            <p><strong>Nombre:</strong> ${nombre}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Teléfono:</strong> ${telefono || "No proporcionado"}</p>
+          </div>
+
+          <div style="margin: 20px 0;">
+            <h3 style="color: #292524;">Mensaje</h3>
+            <p style="background-color: #f5f5f4; padding: 15px; border-radius: 5px; white-space: pre-wrap;">
+              ${mensaje}
+            </p>
+          </div>
+
+          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e7e5e4; color: #78716c; font-size: 12px;">
+            <p>Este es un mensaje automático del formulario de contacto de Casa Campo Jorge.</p>
+          </div>
+        </div>
+      `,
+    });
+
+    // Enviar email de confirmación al cliente
+    const clientEmail = await resend.emails.send({
+      from: "Casa Campo Jorge <onboarding@resend.dev>",
+      to: email,
+      subject: "Gracias por contactarnos - Casa Campo Jorge",
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #292524; border-bottom: 2px solid #292524; padding-bottom: 10px;">
+            Gracias por contactarnos
+          </h2>
+          
+          <p style="font-size: 16px; color: #44403c;">Hola ${nombre},</p>
+          
+          <p style="font-size: 16px; color: #44403c;">
+            Hemos recibido tu mensaje y nos pondremos en contacto contigo a la brevedad.
+          </p>
+
+          <div style="background-color: #f5f5f4; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #292524; margin-top: 0;">Tu mensaje:</h3>
+            <p style="white-space: pre-wrap; color: #44403c;">${mensaje}</p>
+          </div>
+
+          <div style="margin: 20px 0;">
+            <h3 style="color: #292524;">Información de Contacto</h3>
+            <p><strong>Dirección:</strong> Calle Andreoni s/n, San Rafael, Mendoza</p>
+            <p><strong>Teléfono:</strong> 2615064907 / 2604595311</p>
+            <p><strong>Email:</strong> alojamientorural11@gmail.com</p>
+            <p><strong>Horario:</strong> Lunes a Domingo, 9:00 AM - 9:00 PM</p>
+          </div>
+
+          <p style="font-size: 16px; color: #44403c;">
+            ¡Esperamos verte pronto!<br>
+            <strong>Casa Campo Jorge</strong>
+          </p>
+
+          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e7e5e4; color: #78716c; font-size: 12px;">
+            <p>Este es un mensaje automático. Por favor, no respondas a este email.</p>
+          </div>
+        </div>
+      `,
+    });
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: "Mensaje enviado exitosamente",
+        adminEmailId: adminEmail.data?.id,
+        clientEmailId: clientEmail.data?.id,
+      },
+      { status: 200 },
+    );
+  } catch (error) {
+    console.error("Error al enviar email:", error);
+    return NextResponse.json(
+      {
+        error: "Error al procesar el mensaje",
+        details: error instanceof Error ? error.message : "Unknown error",
+      },
+      { status: 500 },
+    );
+  }
+}

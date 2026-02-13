@@ -1,0 +1,292 @@
+"use client";
+
+import { useState } from "react";
+import { X } from "lucide-react";
+
+interface ReservaModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  habitacion: string;
+}
+
+export default function ReservaModal({
+  isOpen,
+  onClose,
+  habitacion,
+}: ReservaModalProps) {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    email: "",
+    telefono: "",
+    fechaEntrada: "",
+    fechaSalida: "",
+    huespedes: "1",
+    mensaje: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/reserva", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          habitacion,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess(true);
+        setTimeout(() => {
+          onClose();
+          setSuccess(false);
+          setFormData({
+            nombre: "",
+            email: "",
+            telefono: "",
+            fechaEntrada: "",
+            fechaSalida: "",
+            huespedes: "1",
+            mensaje: "",
+          });
+        }, 3000);
+      } else {
+        setError(data.error || "Error al enviar la reserva");
+      }
+    } catch {
+      setError("Error de conexión. Por favor intenta nuevamente.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        {/* Header */}
+        <div className="sticky top-0 bg-white border-b border-stone-200 p-6 flex justify-between items-center">
+          <div>
+            <h2 className="text-2xl font-bold text-stone-800 font-serif">
+              Reservar {habitacion}
+            </h2>
+            <p className="text-sm text-stone-600 mt-1">
+              Completa el formulario para solicitar tu reserva
+            </p>
+          </div>
+          <button
+            onClick={onClose}
+            className="text-stone-600 hover:text-stone-800 transition-colors"
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Formulario */}
+        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          {success ? (
+            <div className="bg-green-50 border-2 border-green-500 rounded-lg p-6 text-center">
+              <p className="text-green-800 text-lg font-semibold mb-2">
+                ¡Reserva enviada exitosamente!
+              </p>
+              <p className="text-green-700">
+                Te hemos enviado un correo de confirmación. Nos pondremos en
+                contacto contigo pronto.
+              </p>
+            </div>
+          ) : (
+            <>
+              {error && (
+                <div className="bg-red-50 border-2 border-red-500 rounded-lg p-4 text-red-800">
+                  {error}
+                </div>
+              )}
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    htmlFor="nombre"
+                    className="block text-sm font-semibold text-stone-700 mb-2"
+                  >
+                    Nombre completo *
+                  </label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold text-stone-700 mb-2"
+                  >
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    htmlFor="telefono"
+                    className="block text-sm font-semibold text-stone-700 mb-2"
+                  >
+                    Teléfono
+                  </label>
+                  <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    value={formData.telefono}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="huespedes"
+                    className="block text-sm font-semibold text-stone-700 mb-2"
+                  >
+                    Número de huéspedes *
+                  </label>
+                  <select
+                    id="huespedes"
+                    name="huespedes"
+                    value={formData.huespedes}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    required
+                  >
+                    {[1, 2, 3, 4, 5, 6].map((num) => (
+                      <option key={num} value={num}>
+                        {num} {num === 1 ? "persona" : "personas"}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    htmlFor="fechaEntrada"
+                    className="block text-sm font-semibold text-stone-700 mb-2"
+                  >
+                    Fecha de entrada *
+                  </label>
+                  <input
+                    type="date"
+                    id="fechaEntrada"
+                    name="fechaEntrada"
+                    value={formData.fechaEntrada}
+                    onChange={handleChange}
+                    min={new Date().toISOString().split("T")[0]}
+                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="fechaSalida"
+                    className="block text-sm font-semibold text-stone-700 mb-2"
+                  >
+                    Fecha de salida *
+                  </label>
+                  <input
+                    type="date"
+                    id="fechaSalida"
+                    name="fechaSalida"
+                    value={formData.fechaSalida}
+                    onChange={handleChange}
+                    min={
+                      formData.fechaEntrada ||
+                      new Date().toISOString().split("T")[0]
+                    }
+                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="mensaje"
+                  className="block text-sm font-semibold text-stone-700 mb-2"
+                >
+                  Mensaje o solicitudes especiales
+                </label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  value={formData.mensaje}
+                  onChange={handleChange}
+                  rows={3}
+                  className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none resize-none"
+                  placeholder="Ej: Llegada tarde, necesito cuna para bebé, etc."
+                ></textarea>
+              </div>
+
+              <div className="flex gap-3 pt-4">
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="flex-1 px-6 py-3 border-2 border-stone-300 text-stone-700 rounded-lg hover:bg-stone-50 transition-all font-semibold"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="flex-1 px-6 py-3 text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all font-semibold disabled:bg-stone-400 disabled:cursor-not-allowed"
+                >
+                  {loading ? "Enviando..." : "Enviar Reserva"}
+                </button>
+              </div>
+            </>
+          )}
+        </form>
+      </div>
+    </div>
+  );
+}

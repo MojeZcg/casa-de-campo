@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Map } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function ContactoPage() {
   const [formData, setFormData] = useState({
@@ -11,10 +11,43 @@ export default function ContactoPage() {
     mensaje: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    console.log("Formulario enviado:", formData);
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/contacto", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess(true);
+        setFormData({
+          nombre: "",
+          email: "",
+          telefono: "",
+          mensaje: "",
+        });
+        setTimeout(() => setSuccess(false), 5000);
+      } else {
+        setError(data.error || "Error al enviar el mensaje");
+      }
+    } catch {
+      setError("Error de conexión. Por favor intenta nuevamente.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -49,6 +82,19 @@ export default function ContactoPage() {
               <h2 className="text-3xl font-bold text-stone-800 mb-6 font-serif">
                 Envíanos un mensaje
               </h2>
+
+              {success && (
+                <div className="bg-green-50 border-2 border-green-500 rounded-lg p-4 mb-6 text-green-800">
+                  ¡Mensaje enviado exitosamente! Te responderemos pronto.
+                </div>
+              )}
+
+              {error && (
+                <div className="bg-red-50 border-2 border-red-500 rounded-lg p-4 mb-6 text-red-800">
+                  {error}
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
@@ -123,9 +169,10 @@ export default function ContactoPage() {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 text-lg font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl"
+                  disabled={loading}
+                  className="w-full px-6 py-4 text-lg font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl disabled:bg-stone-400 disabled:cursor-not-allowed"
                 >
-                  Enviar Mensaje
+                  {loading ? "Enviando..." : "Enviar Mensaje"}
                 </button>
               </form>
             </div>
@@ -191,12 +238,18 @@ export default function ContactoPage() {
                 </div>
               </div>
 
-              {/* Mapa placeholder */}
-              <div className="mt-8 bg-stone-100 rounded-lg h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <Map className="w-16 h-16 mx-auto mb-2 text-stone-400" />
-                  <p className="text-stone-600 text-sm">Mapa de ubicación</p>
-                </div>
+              {/* Mapa de Google Maps */}
+              <div className="mt-8 rounded-lg overflow-hidden shadow-lg h-64">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3295.7!2d-68.098789!3d-34.575202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM0JzMwLjciUyA2OMKwMDUnNTUuNiJX!5e0!3m2!1ses!2sar!4v1234567890!5m2!1ses!2sar"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación Casa Campo Jorge"
+                ></iframe>
               </div>
             </div>
           </div>
