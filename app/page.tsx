@@ -46,7 +46,7 @@ export default function Home() {
       </section>
 
       {/* Galería de la Propiedad */}
-      <section className="py-20 px-6 bg-white">
+      <section className="pt-8 pb-12 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-stone-800 text-center mb-4 font-serif">
             Conoce Nuestra Propiedad

@@ -17,33 +17,31 @@ export default function DormitoriosPage() {
       capacidad: "2 personas",
       caracteristicas: [
         "1 Cama matrimonial",
-        "Baño privado",
         "TV por cable",
         "WiFi gratis",
         "Aire acondicionado",
         "Armario espacioso",
       ],
-      imagen: "/3.jpeg",
+      imagen: "/5.jpeg",
     },
     {
       nombre: "Habitación Familiar",
       capacidad: "4 personas",
       caracteristicas: [
         "4 Camas individuales",
-        "Baño compartido",
         "TV por cable",
         "WiFi gratis",
         "Ventilador de techo",
         "Espacio amplio",
       ],
-      imagen: "/5.jpeg",
+      imagen: "/3.jpeg",
     },
   ];
 
   const serviciosIncluidos = [
-    "Desayuno completo",
-    "WiFi de alta velocidad",
-    "Limpieza diaria",
+    "WiFi Gratis",
+    "Pileta al aire libre",
+    "Limpieza garantizada",
     "Estacionamiento gratuito",
     "Ropa de cama y toallas",
     "Servicio de atención 24/7",

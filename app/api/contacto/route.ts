@@ -18,12 +18,12 @@ export async function POST(request: NextRequest) {
 
     // Enviar email al administrador
     const { data: adminData, error: adminError } = await resend.emails.send({
-      from: "Casa Campo Jorge <onboarding@resend.dev>",
-      to: ["jsmonte31@gmail.com"],
-      subject: `Nuevo Mensaje de Contacto - ${nombre}`,
+      from: "Alojamiento Rural <reservas@alojamientorural.com.ar>",
+      to: ["alojamientorural11@gmail.com"],
+      subject: `Nuevo Contacto - ${nombre}`,
       // TODO: Para enviar a otros emails, verifica un dominio en resend.com/domains
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;">
           <h2 style="color: #292524; border-bottom: 2px solid #292524; padding-bottom: 10px;">
             Nuevo Mensaje de Contacto
           </h2>
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
           </div>
 
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e7e5e4; color: #78716c; font-size: 12px;">
-            <p>Este es un mensaje automático del formulario de contacto de Casa Campo Jorge.</p>
+            <p>Este es un mensaje automático del formulario de contacto de Alojamiento Rural.</p>
           </div>
         </div>
       `,
@@ -59,11 +59,11 @@ export async function POST(request: NextRequest) {
 
     // Enviar email de confirmación al cliente
     const { data: clientData, error: clientError } = await resend.emails.send({
-      from: "Casa Campo Jorge <onboarding@resend.dev>",
+      from: "Alojamiento Rural <reservas@alojamientorural.com.ar>",
       to: email,
-      subject: "Gracias por contactarnos - Casa Campo Jorge",
+      subject: "Gracias por contactarnos",
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;">
           <h2 style="color: #292524; border-bottom: 2px solid #292524; padding-bottom: 10px;">
             Gracias por contactarnos
           </h2>
@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
 
           <p style="font-size: 16px; color: #44403c;">
             ¡Esperamos verte pronto!<br>
-            <strong>Casa Campo Jorge</strong>
+            <strong>Alojamiento Rural</strong>
           </p>
 
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e7e5e4; color: #78716c; font-size: 12px;">
@@ -101,12 +101,19 @@ export async function POST(request: NextRequest) {
 
     if (clientError) {
       console.error("Error enviando email al cliente:", clientError);
+      console.log(
+        "⚠️ Para enviar emails a clientes, verifica un dominio en resend.com/domains",
+      );
+      // No falla - solo notifica al administrador
       return NextResponse.json(
         {
-          error:
-            "Error al enviar la confirmación. Por favor intenta nuevamente.",
+          success: true,
+          message: "Mensaje recibido. Te contactaremos pronto.",
+          adminEmailId: adminData?.id,
+          clientEmailNotSent: true,
+          note: "Email de confirmación al cliente pendiente (requiere dominio verificado)",
         },
-        { status: 500 },
+        { status: 200 },
       );
     }
 

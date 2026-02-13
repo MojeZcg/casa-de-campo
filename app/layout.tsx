@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Alojamiento Rural | San Rafael, Mendoza",
     description:
       "Descubre la tranquilidad del campo en nuestro acogedor alojamiento rural. Un lugar donde el tiempo se detiene y la naturaleza te abraza.",
-    url: "https://www.alojamientoruralsanrafael.com",
+    url: "https://www.alojamientorural.com.ar",
     siteName: "Alojamiento Rural San Rafael",
     images: [
       {
