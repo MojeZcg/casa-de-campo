@@ -26,16 +26,16 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-white mb-4">Contacto</h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-stone-400 flex-shrink-0 mt-1" />
+                <MapPin className="w-5 h-5 text-stone-400 shrink-0 mt-1" />
                 <div>
                   <p className="text-stone-300">Calle Andreoni s/n</p>
-                  <p className="text-stone-300">Pedriel, San Rafael, Mendoza</p>
+                  <p className="text-stone-300">San Rafael, Mendoza</p>
                   <p className="text-stone-400 text-sm">Argentina</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-stone-400 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-stone-400 shrink-0" />
                 <div>
                   <a
                     href="tel:+542615064907"
@@ -54,7 +54,7 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-stone-400 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-stone-400 shrink-0" />
                 <a
                   href="mailto:alojamientorural11@gmail.com"
                   className="text-stone-300 hover:text-white transition"
@@ -64,7 +64,7 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-stone-400 flex-shrink-0" />
+                <Clock className="w-5 h-5 text-stone-400    shrink-0" />
                 <div className="text-stone-300">
                   Atención{" "}
                   <span className="text-amber-400 font-semibold">24/7</span>

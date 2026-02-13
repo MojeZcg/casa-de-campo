@@ -24,7 +24,7 @@ export default function Navigation() {
             href="/"
             className="text-2xl font-serif font-bold text-stone-800"
           >
-            Alojamiento Rural - Pedriel
+            Alojamiento Rural - San Rafael
           </Link>
 
           {/* Desktop Navigation */}

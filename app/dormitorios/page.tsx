@@ -74,7 +74,7 @@ export default function DormitoriosPage() {
       </section>
 
       {/* Descripción de las habitaciones */}
-      <section className="py-20 px-6">
+      <section className="py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-12 text-center font-serif">
             Distribución de las Habitaciones
@@ -123,7 +123,7 @@ export default function DormitoriosPage() {
       </section>
 
       {/* Servicios Incluidos */}
-      <section className="py-20 px-6 bg-stone-50">
+      <section className="py-12 px-6 bg-stone-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-8 text-center font-serif">
             Servicios Incluidos en el Precio
@@ -156,7 +156,7 @@ export default function DormitoriosPage() {
       </section>
 
       {/* Política */}
-      <section className="py-20 px-6">
+      <section className="pt-10 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-6 font-serif">
             Información Importante
@@ -173,7 +173,7 @@ export default function DormitoriosPage() {
       <ReservaModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        habitacion="Casa Campo Jorge - Alojamiento Completo"
+        habitacion="Alojamiento Rural - Completo"
       />
     </div>
   );

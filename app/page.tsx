@@ -16,7 +16,7 @@ export default function Home() {
             Alojamiento Rural
           </h1>
           <p className="text-2xl md:text-3xl text-stone-600 mb-8 italic">
-            Ubicado en Pedriel, Mendoza, Argentina.
+            Ubicado en San Rafael, Mendoza, Argentina.
           </p>
           <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto mb-12 leading-relaxed">
             Descubre la tranquilidad del campo en nuestro acogedor alojamiento
@@ -121,7 +121,7 @@ export default function Home() {
       <ReservaModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        habitacion="Casa Campo Jorge - Alojamiento Completo"
+        habitacion="Alojamiento Rural - Completo"
       />
     </div>
   );
