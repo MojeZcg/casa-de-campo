@@ -8,7 +8,7 @@ import ReservaModal from "../components/ReservaModal";
 export default function DormitoriosPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const precioTotal = "$10,000/noche";
+  const precioTotal = "$110,000/noche";
   const capacidadTotal = "Hasta 6 personas";
 
   const habitaciones = [

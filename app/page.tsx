@@ -54,7 +54,7 @@ export default function Home() {
             Alojamiento completo • 2 Habitaciones • Hasta 6 personas
           </p>
           <div className="mb-8">
-            <p className="text-5xl font-bold mb-4">$10,000/noche</p>
+            <p className="text-5xl font-bold mb-4">$110,000/noche</p>
             <p className="text-lg text-stone-300">
               Incluye todas las comodidades y servicios
             </p>
