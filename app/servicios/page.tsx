@@ -1,12 +1,4 @@
-import {
-  Wifi,
-  MapPin,
-  ShoppingCart,
-  Tv,
-  Flame,
-  RefreshCw,
-  Waves,
-} from "lucide-react";
+import { Wifi, MapPin, Tv, Flame, RefreshCw, Waves } from "lucide-react";
 
 export default function ServiciosPage() {
   const servicios = [

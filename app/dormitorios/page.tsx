@@ -129,7 +129,24 @@ export default function DormitoriosPage() {
                           <Sparkles className="w-5 h-5 mr-2 text-stone-700" />
                           {servicio}
                         </li>
-          Nota importante */}
+                      ))}
+                    </ul>
+                  </div>
+
+                  <a
+                    href="/contacto"
+                    className="inline-block px-6 py-3 text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all font-semibold"
+                  >
+                    Reservar Ahora
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Nota importante */}
       <section className="py-20 px-6 bg-stone-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-6 font-serif">
@@ -139,24 +156,7 @@ export default function DormitoriosPage() {
             Todos los servicios están incluidos en el precio de la habitación.
             No vendemos servicios por separado, cada dormitorio cuenta con su
             paquete completo de amenidades según la categoría seleccionada.
-          </pdiv className="w-16 h-16 mx-auto mb-4 text-stone-700 flex items-center justify-center">
-                <ShoppingCart className="w-16 h-16" />
-              </div>
-              <h3 className="font-semibold text-stone-800">Desayuno</h3>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 text-stone-700 flex items-center justify-center">
-                <Wifi className="w-16 h-16" />
-              </div>
-              <h3 className="font-semibold text-stone-800">WiFi Gratis</h3>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 text-stone-700 flex items-center justify-center">
-                <Sparkles className="w-16 h-16" />
-              </div>
-              <h3 className="font-semibold text-stone-800">Limpieza Diaria</h3>
-            </div>
-          </div>
+          </p>
         </div>
       </section>
     </div>
