@@ -5,12 +5,12 @@ export default function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-200">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto  py-12">
+        <div className="grid md:grid-cols-3 gap-20">
           {/* Sobre Nosotros */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-4 font-serif">
-              Casa Campo Jorge
+              Alojamiento Rural - San Rafael
             </h3>
             <p className="text-stone-300 mb-4 leading-relaxed">
               Alojamiento rural en el corazón de Mendoza. Experimenta la
@@ -131,8 +131,16 @@ export default function Footer() {
               © {new Date().getFullYear()} Casa Campo Jorge. Todos los derechos
               reservados.
             </p>
-            <p className="text-stone-500 text-sm text-center md:text-right">
-              Alojamiento Rural en Mendoza, Argentina
+            <p className="text-[11.5px] text-gray-400">
+              Diseñada y Desarrollada por{" "}
+              <Link
+                title="Desarrollador de DelRio Internet Walter J. Montenegro"
+                target="_blank"
+                href="https://www.linkedin.com/in/montenegrowalter/"
+                className="text-white"
+              >
+                Walter J. Montenegro
+              </Link>
             </p>
           </div>
         </div>
