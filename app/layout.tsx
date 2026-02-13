@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Casa Campo Jorge - Alojamiento Rural",
+  title: "Alojamiento Rural | San Rafael, Mendoza",
   description:
     "Descubre la tranquilidad del campo en nuestro acogedor alojamiento rural. Un lugar donde el tiempo se detiene y la naturaleza te abraza.",
 };
