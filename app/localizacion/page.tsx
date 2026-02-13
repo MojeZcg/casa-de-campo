@@ -1,0 +1,257 @@
+"use client";
+
+import { useState } from "react";
+import { MapPin, Phone, Mail, Clock, Map } from "lucide-react";
+
+export default function LocalizacionPage() {
+  const [activeTab, setActiveTab] = useState<"es" | "en">("es");
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative bg-linear-to-br from-stone-100 to-white py-20 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-stone-800 mb-6 font-serif">
+            Localización
+          </h1>
+          <p className="text-xl md:text-2xl text-stone-600 mb-4">
+            Estamos ubicados en las afueras de la ciudad
+          </p>
+          <p className="text-lg text-stone-500 italic">
+            Es fácil encontrarnos pero difícil dejarnos
+          </p>
+        </div>
+      </section>
+
+      {/* Tabs Section */}
+      <section className="max-w-6xl mx-auto px-6 py-12">
+        <div className="bg-white border-2 border-stone-200 rounded-lg shadow-lg overflow-hidden">
+          <div className="flex border-b border-stone-200">
+            <button
+              onClick={() => setActiveTab("es")}
+              className={`flex-1 py-4 px-6 text-lg font-semibold transition-all ${
+                activeTab === "es"
+                  ? "bg-stone-800 text-white"
+                  : "bg-white text-stone-600 hover:bg-stone-50"
+              }`}
+            >
+              CÓMO LLEGAR
+            </button>
+            <button
+              onClick={() => setActiveTab("en")}
+              className={`flex-1 py-4 px-6 text-lg font-semibold transition-all ${
+                activeTab === "en"
+                  ? "bg-stone-800 text-white"
+                  : "bg-white text-stone-600 hover:bg-stone-50"
+              }`}
+            >
+              HOW TO GET
+            </button>
+          </div>
+
+          {/* Tab Content */}
+          <div className="p-8 md:p-12">
+            {activeTab === "es" ? (
+              <div className="space-y-12">
+                {/* Opción 1: Micro */}
+                <div className="flex flex-col md:flex-row gap-6 items-start">
+                  <div className="shrink-0">
+                    <div className="w-20 h-20 rounded-full bg-stone-800 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                      01
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-stone-800 mb-3">
+                      Por Micro
+                    </h3>
+                    <p className="text-stone-700 leading-relaxed">
+                      Desde la terminal se puede dirigir al complejo abordando
+                      el bus 146 del grupo Iselin. El recorrido dura
+                      aproximadamente 35 minutos y te deja a solo 5 minutos
+                      caminando de nuestro alojamiento rural.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Opción 2: Taxi */}
+                <div className="flex flex-col md:flex-row gap-6 items-start">
+                  <div className="shrink-0">
+                    <div className="w-20 h-20 rounded-full bg-stone-800 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                      02
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-stone-800 mb-3">
+                      En Taxi
+                    </h3>
+                    <p className="text-stone-700 leading-relaxed">
+                      Puedes tomar un taxi desde cualquier punto de la ciudad.
+                      El viaje desde el centro dura aproximadamente 25 minutos.
+                      Te recomendamos acordar el precio antes de partir. El
+                      costo promedio es de $2000-2500 pesos.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Opción 3: Bicicleta */}
+                <div className="flex flex-col md:flex-row gap-6 items-start">
+                  <div className="shrink-0">
+                    <div className="w-20 h-20 rounded-full bg-stone-800 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                      03
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-stone-800 mb-3">
+                      En Bicicleta
+                    </h3>
+                    <p className="text-stone-700 leading-relaxed">
+                      Si te gusta el ciclismo, hay una hermosa ruta de 12 km
+                      desde el centro de la ciudad. El camino es mayormente
+                      llano con algunos tramos panorámicos. Contamos con un
+                      espacio seguro para guardar bicicletas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-12">
+                {/* Option 1: Bus */}
+                <div className="flex flex-col md:flex-row gap-6 items-start">
+                  <div className="shrink-0">
+                    <div className="w-20 h-20 rounded-full bg-stone-800 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                      01
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-stone-800 mb-3">
+                      By Bus
+                    </h3>
+                    <p className="text-stone-700 leading-relaxed">
+                      From the terminal you can reach our location by taking bus
+                      146 from the Iselin group. The journey takes approximately
+                      35 minutes and leaves you just a 5-minute walk from our
+                      rural accommodation.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Option 2: Taxi */}
+                <div className="flex flex-col md:flex-row gap-6 items-start">
+                  <div className="shrink-0">
+                    <div className="w-20 h-20 rounded-full bg-stone-800 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                      02
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-stone-800 mb-3">
+                      By Taxi
+                    </h3>
+                    <p className="text-stone-700 leading-relaxed">
+                      You can take a taxi from anywhere in the city. The trip
+                      from downtown takes approximately 25 minutes. We recommend
+                      agreeing on the price before departing. The average cost
+                      is $2000-2500 pesos.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Option 3: Bicycle */}
+                <div className="flex flex-col md:flex-row gap-6 items-start">
+                  <div className="shrink-0">
+                    <div className="w-20 h-20 rounded-full bg-stone-800 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                      03
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-stone-800 mb-3">
+                      By Bicycle
+                    </h3>
+                    <p className="text-stone-700 leading-relaxed">
+                      If you enjoy cycling, there&apos;s a beautiful 12 km route
+                      from the city center. The path is mostly flat with some
+                      scenic stretches. We have a secure space for storing
+                      bicycles.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="max-w-6xl mx-auto px-6 py-12">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="aspect-video bg-stone-200 flex items-center justify-center">
+            <div className="text-center p-8">
+              <Map className="w-16 h-16 mx-auto mb-4 text-stone-400" />
+              <p className="text-stone-600 font-medium">
+                Espacio para integrar mapa interactivo
+              </p>
+              <p className="text-sm text-stone-500 mt-2">
+                (Google Maps, OpenStreetMap, etc.)
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="bg-stone-800 py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-white text-center mb-12 font-serif">
+            CONTACTO
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 text-white">
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-6 h-6 mt-1 shrink-0" />
+                <div>
+                  <p className="font-semibold text-lg">Dirección</p>
+                  <p className="text-stone-200">Calle Andreoni s/n</p>
+                  <p className="text-stone-200">
+                    Colonia Elena - Cuadro Nacional
+                  </p>
+                  <p className="text-stone-200">San Rafael, Mendoza</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Phone className="w-6 h-6 mt-1 shrink-0" />
+                <div>
+                  <p className="font-semibold text-lg">Teléfono</p>
+                  <p className="text-stone-200">2615064907</p>
+                  <p className="text-stone-200">2604595311</p>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <Mail className="w-6 h-6 mt-1 shrink-0" />
+                <div>
+                  <p className="font-semibold text-lg">Email</p>
+                  <p className="text-stone-200">alojamientorural11@gmail.com</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-6 h-6 mt-1 shrink-0" />
+                <div>
+                  <p className="font-semibold text-lg">Horario de atención</p>
+                  <p className="text-stone-200">Lunes a Domingo</p>
+                  <p className="text-stone-200">9:00 AM - 9:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-stone-900 py-8 px-6 text-center text-stone-300">
+        <p className="text-sm">
+          © {new Date().getFullYear()} Casa Campo Jorge - Alojamiento Rural
+        </p>
+      </footer>
+    </div>
+  );
+}
