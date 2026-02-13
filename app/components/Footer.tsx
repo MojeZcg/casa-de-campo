@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-200">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto  py-12">
+      <div className="max-w-7xl mx-auto py-12">
         <div className="grid md:grid-cols-3 gap-20">
           {/* Sobre Nosotros */}
           <div>

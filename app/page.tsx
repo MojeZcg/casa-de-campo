@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Home as HomeIcon, Sun, Smile, Calendar } from "lucide-react";
 import ReservaModal from "./components/ReservaModal";
@@ -40,6 +41,66 @@ export default function Home() {
             >
               Nuestros Servicios
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Galería de la Propiedad */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-stone-800 text-center mb-4 font-serif">
+            Conoce Nuestra Propiedad
+          </h2>
+          <p className="text-xl text-stone-600 text-center mb-12">
+            Un espacio único para disfrutar de la tranquilidad del campo
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Foto Principal - Foto 1 */}
+            <div className="md:row-span-2 relative h-125 md:h-full overflow-hidden rounded-2xl shadow-2xl group">
+              <Image
+                src="/1.jpeg"
+                alt="Vista principal de la casa de campo"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                priority
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/70 to-transparent p-6">
+                <p className="text-white text-xl font-semibold">
+                  Vista Exterior
+                </p>
+              </div>
+            </div>
+
+            {/* Foto 2 */}
+            <div className="relative h-60 overflow-hidden rounded-2xl shadow-xl group">
+              <Image
+                src="/2.jpeg"
+                alt="Interior acogedor de la casa rural"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/70 to-transparent p-4">
+                <p className="text-white text-lg font-semibold">
+                  Interior Acogedor
+                </p>
+              </div>
+            </div>
+
+            {/* Foto 4 */}
+            <div className="relative h-60 overflow-hidden rounded-2xl shadow-xl group">
+              <Image
+                src="/4.jpeg"
+                alt="Espacios de la casa de campo"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/70 to-transparent p-4">
+                <p className="text-white text-lg font-semibold">
+                  Espacios Únicos
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

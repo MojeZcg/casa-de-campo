@@ -18,6 +18,33 @@ export const metadata: Metadata = {
   title: "Alojamiento Rural | San Rafael, Mendoza",
   description:
     "Descubre la tranquilidad del campo en nuestro acogedor alojamiento rural. Un lugar donde el tiempo se detiene y la naturaleza te abraza.",
+  keywords: [
+    "alojamiento rural",
+    "san rafael",
+    "mendoza",
+    "casa de campo",
+    "alquiler de casas rurales",
+    "vacaciones en el campo",
+    "turismo rural",
+    "alojamiento con pileta",
+    "alojamiento con wifi",
+  ],
+  openGraph: {
+    title: "Alojamiento Rural | San Rafael, Mendoza",
+    description:
+      "Descubre la tranquilidad del campo en nuestro acogedor alojamiento rural. Un lugar donde el tiempo se detiene y la naturaleza te abraza.",
+    url: "https://www.alojamientoruralsanrafael.com",
+    siteName: "Alojamiento Rural San Rafael",
+    images: [
+      {
+        url: "/og.png",
+        width: 1500,
+        height: 787,
+        alt: "Alojamiento Rural San Rafael - Vista Exterior",
+      },
+    ],
+    locale: "es_AR",
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es_AR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
