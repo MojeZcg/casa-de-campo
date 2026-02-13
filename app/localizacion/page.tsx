@@ -217,62 +217,6 @@ export default function LocalizacionPage() {
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section className="bg-stone-800 py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-white text-center mb-12 font-serif">
-            CONTACTO
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 text-white">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-6 h-6 mt-1 shrink-0" />
-                <div>
-                  <p className="font-semibold text-lg">Dirección</p>
-                  <p className="text-stone-200">Calle Andreoni s/n</p>
-                  <p className="text-stone-200">
-                    Colonia Elena - Cuadro Nacional
-                  </p>
-                  <p className="text-stone-200">San Rafael, Mendoza</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Phone className="w-6 h-6 mt-1 shrink-0" />
-                <div>
-                  <p className="font-semibold text-lg">Teléfono</p>
-                  <p className="text-stone-200">2615064907</p>
-                  <p className="text-stone-200">2604595311</p>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Mail className="w-6 h-6 mt-1 shrink-0" />
-                <div>
-                  <p className="font-semibold text-lg">Email</p>
-                  <p className="text-stone-200">alojamientorural11@gmail.com</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Clock className="w-6 h-6 mt-1 shrink-0" />
-                <div>
-                  <p className="font-semibold text-lg">Horario de atención</p>
-                  <p className="text-stone-200">Lunes a Domingo</p>
-                  <p className="text-stone-200">9:00 AM - 9:00 PM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-stone-900 py-8 px-6 text-center text-stone-300">
-        <p className="text-sm">
-          © {new Date().getFullYear()} Casa Campo Jorge - Alojamiento Rural
-        </p>
-      </footer>
     </div>
   );
 }

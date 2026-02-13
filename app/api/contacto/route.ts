@@ -17,10 +17,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Enviar email al administrador
-    const adminEmail = await resend.emails.send({
+    const { data: adminData, error: adminError } = await resend.emails.send({
       from: "Casa Campo Jorge <onboarding@resend.dev>",
-      to: "alojamientorural11@gmail.com",
+      to: ["jsmonte31@gmail.com"],
       subject: `Nuevo Mensaje de Contacto - ${nombre}`,
+      // TODO: Para enviar a otros emails, verifica un dominio en resend.com/domains
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #292524; border-bottom: 2px solid #292524; padding-bottom: 10px;">
@@ -48,8 +49,16 @@ export async function POST(request: NextRequest) {
       `,
     });
 
+    if (adminError) {
+      console.error("Error enviando email al administrador:", adminError);
+      return NextResponse.json(
+        { error: "Error al enviar el mensaje. Por favor intenta nuevamente." },
+        { status: 500 },
+      );
+    }
+
     // Enviar email de confirmación al cliente
-    const clientEmail = await resend.emails.send({
+    const { data: clientData, error: clientError } = await resend.emails.send({
       from: "Casa Campo Jorge <onboarding@resend.dev>",
       to: email,
       subject: "Gracias por contactarnos - Casa Campo Jorge",
@@ -75,7 +84,7 @@ export async function POST(request: NextRequest) {
             <p><strong>Dirección:</strong> Calle Andreoni s/n, San Rafael, Mendoza</p>
             <p><strong>Teléfono:</strong> 2615064907 / 2604595311</p>
             <p><strong>Email:</strong> alojamientorural11@gmail.com</p>
-            <p><strong>Horario:</strong> Lunes a Domingo, 9:00 AM - 9:00 PM</p>
+            <p><strong>Horario:</strong> Atención 24/7</p>
           </div>
 
           <p style="font-size: 16px; color: #44403c;">
@@ -90,12 +99,23 @@ export async function POST(request: NextRequest) {
       `,
     });
 
+    if (clientError) {
+      console.error("Error enviando email al cliente:", clientError);
+      return NextResponse.json(
+        {
+          error:
+            "Error al enviar la confirmación. Por favor intenta nuevamente.",
+        },
+        { status: 500 },
+      );
+    }
+
     return NextResponse.json(
       {
         success: true,
         message: "Mensaje enviado exitosamente",
-        adminEmailId: adminEmail.data?.id,
-        clientEmailId: clientEmail.data?.id,
+        adminEmailId: adminData?.id,
+        clientEmailId: clientData?.id,
       },
       { status: 200 },
     );

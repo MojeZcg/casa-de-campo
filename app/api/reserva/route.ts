@@ -26,10 +26,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Enviar email al administrador
-    const adminEmail = await resend.emails.send({
+    const { data: adminData, error: adminError } = await resend.emails.send({
       from: "Casa Campo Jorge <onboarding@resend.dev>",
-      to: "alojamientorural11@gmail.com",
+      to: ["jsmonte31@gmail.com"],
       subject: `Nueva Reserva - ${habitacion}`,
+      // TODO: Para enviar a otros emails, verifica un dominio en resend.com/domains
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #292524; border-bottom: 2px solid #292524; padding-bottom: 10px;">
@@ -71,8 +72,19 @@ export async function POST(request: NextRequest) {
       `,
     });
 
+    if (adminError) {
+      console.error("Error enviando email al administrador:", adminError);
+      return NextResponse.json(
+        {
+          error:
+            "Error al enviar la notificación. Por favor intenta nuevamente.",
+        },
+        { status: 500 },
+      );
+    }
+
     // Enviar email de confirmación al cliente
-    const clientEmail = await resend.emails.send({
+    const { data: clientData, error: clientError } = await resend.emails.send({
       from: "Casa Campo Jorge <onboarding@resend.dev>",
       to: email,
       subject: "Confirmación de Solicitud de Reserva - Casa Campo Jorge",
@@ -120,12 +132,23 @@ export async function POST(request: NextRequest) {
       `,
     });
 
+    if (clientError) {
+      console.error("Error enviando email al cliente:", clientError);
+      return NextResponse.json(
+        {
+          error:
+            "Error al enviar la confirmación. Por favor intenta nuevamente.",
+        },
+        { status: 500 },
+      );
+    }
+
     return NextResponse.json(
       {
         success: true,
         message: "Reserva enviada exitosamente",
-        adminEmailId: adminEmail.data?.id,
-        clientEmailId: clientEmail.data?.id,
+        adminEmailId: adminData?.id,
+        clientEmailId: clientData?.id,
       },
       { status: 200 },
     );

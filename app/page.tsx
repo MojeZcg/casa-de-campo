@@ -13,10 +13,10 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center px-6 bg-linear-to-br from-stone-50 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-stone-800 mb-6 font-serif">
-            Casa Campo Jorge
+            Alojamiento Rural
           </h1>
           <p className="text-2xl md:text-3xl text-stone-600 mb-8 italic">
-            Alojamiento Rural
+            Ubicado en Pedriel, Mendoza, Argentina.
           </p>
           <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto mb-12 leading-relaxed">
             Descubre la tranquilidad del campo en nuestro acogedor alojamiento

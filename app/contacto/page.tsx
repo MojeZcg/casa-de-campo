@@ -41,9 +41,15 @@ export default function ContactoPage() {
         });
         setTimeout(() => setSuccess(false), 5000);
       } else {
-        setError(data.error || "Error al enviar el mensaje");
+        // Asegurarse de que el error sea una cadena de texto
+        const errorMessage =
+          typeof data.error === "string"
+            ? data.error
+            : data.error?.message || "Error al enviar el mensaje";
+        setError(errorMessage);
       }
-    } catch {
+    } catch (err) {
+      console.error("Error en contacto:", err);
       setError("Error de conexión. Por favor intenta nuevamente.");
     } finally {
       setLoading(false);
@@ -232,8 +238,10 @@ export default function ContactoPage() {
                     <h3 className="font-semibold text-stone-800 mb-1">
                       Horario
                     </h3>
-                    <p className="text-stone-600">Lunes a Domingo</p>
-                    <p className="text-stone-600">9:00 AM - 9:00 PM</p>
+                    <p className="text-stone-600">
+                      Atención{" "}
+                      <span className="text-amber-500 font-semibold">24/7</span>
+                    </p>
                   </div>
                 </div>
               </div>

@@ -63,9 +63,15 @@ export default function ReservaModal({
           });
         }, 3000);
       } else {
-        setError(data.error || "Error al enviar la reserva");
+        // Asegurarse de que el error sea una cadena de texto
+        const errorMessage =
+          typeof data.error === "string"
+            ? data.error
+            : data.error?.message || "Error al enviar la reserva";
+        setError(errorMessage);
       }
-    } catch {
+    } catch (err) {
+      console.error("Error en reserva:", err);
       setError("Error de conexión. Por favor intenta nuevamente.");
     } finally {
       setLoading(false);
@@ -86,10 +92,16 @@ export default function ReservaModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-in zoom-in-95 duration-200"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
-        <div className="sticky top-0 bg-white border-b border-stone-200 p-6 flex justify-between items-center">
+        <div className="sticky top-0 bg-white border-b border-stone-200 p-6 rounded-t-2xl flex justify-between items-center z-10">
           <div>
             <h2 className="text-2xl font-bold text-stone-800 font-serif">
               Reservar {habitacion}
@@ -100,7 +112,7 @@ export default function ReservaModal({
           </div>
           <button
             onClick={onClose}
-            className="text-stone-600 hover:text-stone-800 transition-colors"
+            className="text-stone-400 hover:text-stone-800 transition-colors p-2 hover:bg-stone-100 rounded-full"
           >
             <X className="w-6 h-6" />
           </button>
@@ -140,7 +152,8 @@ export default function ReservaModal({
                     name="nombre"
                     value={formData.nombre}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    className="w-full px-4 py-3 bg-stone-50 border-2 border-stone-300 rounded-lg focus:border-stone-800 focus:outline-none focus:bg-white transition-all text-stone-800 placeholder:text-stone-400"
+                    placeholder="Juan Pérez"
                     required
                   />
                 </div>
@@ -158,7 +171,8 @@ export default function ReservaModal({
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    className="w-full px-4 py-3 bg-stone-50 border-2 border-stone-300 rounded-lg focus:border-stone-800 focus:outline-none focus:bg-white transition-all text-stone-800 placeholder:text-stone-400"
+                    placeholder="correo@ejemplo.com"
                     required
                   />
                 </div>
@@ -178,7 +192,8 @@ export default function ReservaModal({
                     name="telefono"
                     value={formData.telefono}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    className="w-full px-4 py-3 bg-stone-50 border-2 border-stone-300 rounded-lg focus:border-stone-800 focus:outline-none focus:bg-white transition-all text-stone-800 placeholder:text-stone-400"
+                    placeholder="2615064907"
                   />
                 </div>
 
@@ -194,7 +209,7 @@ export default function ReservaModal({
                     name="huespedes"
                     value={formData.huespedes}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    className="w-full px-4 py-3 bg-stone-50 border-2 border-stone-300 rounded-lg focus:border-stone-800 focus:outline-none focus:bg-white transition-all text-stone-800"
                     required
                   >
                     {[1, 2, 3, 4, 5, 6].map((num) => (
@@ -221,7 +236,7 @@ export default function ReservaModal({
                     value={formData.fechaEntrada}
                     onChange={handleChange}
                     min={new Date().toISOString().split("T")[0]}
-                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    className="w-full px-4 py-3 bg-stone-50 border-2 border-stone-300 rounded-lg focus:border-stone-800 focus:outline-none focus:bg-white transition-all text-stone-800"
                     required
                   />
                 </div>
@@ -243,7 +258,7 @@ export default function ReservaModal({
                       formData.fechaEntrada ||
                       new Date().toISOString().split("T")[0]
                     }
-                    className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none"
+                    className="w-full px-4 py-3 bg-stone-50 border-2 border-stone-300 rounded-lg focus:border-stone-800 focus:outline-none focus:bg-white transition-all text-stone-800"
                     required
                   />
                 </div>
@@ -262,23 +277,23 @@ export default function ReservaModal({
                   value={formData.mensaje}
                   onChange={handleChange}
                   rows={3}
-                  className="w-full px-4 py-2 border-2 border-stone-200 rounded-lg focus:border-stone-800 focus:outline-none resize-none"
+                  className="w-full px-4 py-3 bg-stone-50 border-2 border-stone-300 rounded-lg focus:border-stone-800 focus:outline-none focus:bg-white resize-none transition-all text-stone-800 placeholder:text-stone-400"
                   placeholder="Ej: Llegada tarde, necesito cuna para bebé, etc."
                 ></textarea>
               </div>
 
-              <div className="flex gap-3 pt-4">
+              <div className="flex gap-3 pt-4 border-t border-stone-200 mt-6">
                 <button
                   type="button"
                   onClick={onClose}
-                  className="flex-1 px-6 py-3 border-2 border-stone-300 text-stone-700 rounded-lg hover:bg-stone-50 transition-all font-semibold"
+                  className="flex-1 px-6 py-3 border-2 border-stone-300 text-stone-700 rounded-lg hover:bg-stone-100 transition-all font-semibold"
                 >
                   Cancelar
                 </button>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 px-6 py-3 text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all font-semibold disabled:bg-stone-400 disabled:cursor-not-allowed"
+                  className="flex-1 px-6 py-3 text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all font-semibold disabled:bg-stone-400 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
                 >
                   {loading ? "Enviando..." : "Enviar Reserva"}
                 </button>

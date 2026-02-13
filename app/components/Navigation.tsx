@@ -24,7 +24,7 @@ export default function Navigation() {
             href="/"
             className="text-2xl font-serif font-bold text-stone-800"
           >
-            Casa Campo Jorge
+            Alojamiento Rural - Pedriel
           </Link>
 
           {/* Desktop Navigation */}
