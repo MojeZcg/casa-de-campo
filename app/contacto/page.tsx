@@ -68,24 +68,24 @@ export default function ContactoPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-linear-to-br from-stone-100 to-white py-20 px-6">
+      <section className="bg-linear-to-br from-stone-100 to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-stone-800 mb-6 font-serif">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
             Contacto
           </h1>
-          <p className="text-xl text-stone-600">
+          <p className="text-lg sm:text-xl text-stone-600">
             Estamos aquí para ayudarte. Escríbenos o visítanos
           </p>
         </div>
       </section>
 
       {/* Contenido */}
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
             {/* Formulario */}
             <div>
-              <h2 className="text-3xl font-bold text-stone-800 mb-6 font-serif">
+              <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
                 Envíanos un mensaje
               </h2>
 
@@ -185,60 +185,70 @@ export default function ContactoPage() {
 
             {/* Información de contacto */}
             <div>
-              <h2 className="text-3xl font-bold text-stone-800 mb-6 font-serif">
+              <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
                 Información de Contacto
               </h2>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div className="shrink-0">
-                    <MapPin className="w-6 h-6 text-stone-700" />
+                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-stone-700" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-1">
+                    <h3 className="font-semibold text-sm sm:text-base text-stone-800 mb-1">
                       Dirección
                     </h3>
-                    <p className="text-stone-600">Calle Andreoni s/n</p>
-                    <p className="text-stone-600">
+                    <p className="text-sm sm:text-base text-stone-600">
+                      Calle Andreoni s/n
+                    </p>
+                    <p className="text-sm sm:text-base text-stone-600">
                       Colonia Elena - Cuadro Nacional
                     </p>
-                    <p className="text-stone-600">San Rafael, Mendoza</p>
+                    <p className="text-sm sm:text-base text-stone-600">
+                      San Rafael, Mendoza
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div className="shrink-0">
-                    <Phone className="w-6 h-6 text-stone-700" />
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-stone-700" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-1">
+                    <h3 className="font-semibold text-sm sm:text-base text-stone-800 mb-1">
                       Teléfono
                     </h3>
-                    <p className="text-stone-600">2615064907</p>
-                    <p className="text-stone-600">2604595311</p>
+                    <p className="text-sm sm:text-base text-stone-600">
+                      2615064907
+                    </p>
+                    <p className="text-sm sm:text-base text-stone-600">
+                      2604595311
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div className="shrink-0">
-                    <Mail className="w-6 h-6 text-stone-700" />
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-stone-700" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-1">Email</h3>
-                    <p className="text-stone-600">
+                    <h3 className="font-semibold text-sm sm:text-base text-stone-800 mb-1">
+                      Email
+                    </h3>
+                    <p className="text-sm sm:text-base text-stone-600 break-all">
                       alojamientorural11@gmail.com
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div className="shrink-0">
-                    <Clock className="w-6 h-6 text-stone-700" />
+                    <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-stone-700" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-1">
+                    <h3 className="font-semibold text-sm sm:text-base text-stone-800 mb-1">
                       Horario
                     </h3>
-                    <p className="text-stone-600">
+                    <p className="text-sm sm:text-base text-stone-600">
                       Atención{" "}
                       <span className="text-amber-500 font-semibold">24/7</span>
                     </p>
@@ -247,7 +257,7 @@ export default function ContactoPage() {
               </div>
 
               {/* Mapa de Google Maps */}
-              <div className="mt-8 rounded-lg overflow-hidden shadow-lg h-64">
+              <div className="mt-6 sm:mt-8 rounded-lg overflow-hidden shadow-lg h-48 sm:h-64">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3295.7!2d-68.098789!3d-34.575202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM0JzMwLjciUyA2OMKwMDUnNTUuNiJX!5e0!3m2!1ses!2sar!4v1234567890!5m2!1ses!2sar"
                   width="100%"

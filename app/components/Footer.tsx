@@ -5,18 +5,18 @@ export default function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-200">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto py-12">
-        <div className="grid md:grid-cols-3 gap-20">
+      <div className="max-w-7xl mx-auto py-8 sm:py-12 px-4 sm:px-6">
+        <div className="grid md:grid-cols-3 gap-8 sm:gap-12 md:gap-20">
           {/* Sobre Nosotros */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-4 font-serif">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 font-serif">
               Alojamiento Rural - San Rafael
             </h3>
-            <p className="text-stone-300 mb-4 leading-relaxed">
+            <p className="text-sm sm:text-base text-stone-300 mb-3 sm:mb-4 leading-relaxed">
               Alojamiento rural en el corazón de Mendoza. Experimenta la
               tranquilidad del campo con todas las comodidades modernas.
             </p>
-            <p className="text-stone-400 text-sm">
+            <p className="text-stone-400 text-xs sm:text-sm">
               Un lugar donde el tiempo se detiene y la naturaleza te abraza.
             </p>
           </div>
@@ -34,30 +34,32 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-stone-400 shrink-0" />
-                <div>
+              <div className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-stone-400 shrink-0 mt-0.5" />
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
                   <a
                     href="tel:+542615064907"
-                    className="text-stone-300 hover:text-white transition"
+                    className="text-sm sm:text-base text-stone-300 hover:text-white transition"
                   >
                     2615064907
                   </a>
-                  <span className="text-stone-500 mx-2">•</span>
+                  <span className="hidden sm:inline text-stone-500 mx-2">
+                    •
+                  </span>
                   <a
                     href="tel:+542604595311"
-                    className="text-stone-300 hover:text-white transition"
+                    className="text-sm sm:text-base text-stone-300 hover:text-white transition"
                   >
                     2604595311
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-stone-400 shrink-0" />
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-stone-400 shrink-0 mt-0.5" />
                 <a
                   href="mailto:alojamientorural11@gmail.com"
-                  className="text-stone-300 hover:text-white transition"
+                  className="text-sm sm:text-base text-stone-300 hover:text-white transition break-all"
                 >
                   alojamientorural11@gmail.com
                 </a>
@@ -125,19 +127,19 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-stone-800">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-stone-400 text-sm text-center md:text-left">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+            <p className="text-stone-400 text-xs sm:text-sm text-center md:text-left">
               © {new Date().getFullYear()} Alojamiento Rural. Todos los derechos
               reservados.
             </p>
-            <p className="text-[11.5px] text-gray-400">
+            <p className="text-[10px] sm:text-[11.5px] text-gray-400 text-center">
               Diseñada y Desarrollada por{" "}
               <Link
                 title="Desarrollador de DelRio Internet Walter J. Montenegro"
                 target="_blank"
                 href="https://www.linkedin.com/in/montenegrowalter/"
-                className="text-white"
+                className="text-white hover:underline"
               >
                 Walter J. Montenegro
               </Link>

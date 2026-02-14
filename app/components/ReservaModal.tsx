@@ -93,39 +93,40 @@ export default function ReservaModal({
 
   return (
     <div
-      className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4 animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-in zoom-in-95 duration-200"
+        className="bg-white rounded-xl sm:rounded-2xl max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 bg-white border-b border-stone-200 p-6 rounded-t-2xl flex justify-between items-center z-10">
-          <div>
-            <h2 className="text-2xl font-bold text-stone-800 font-serif">
+        <div className="sticky top-0 bg-white border-b border-stone-200 p-4 sm:p-6 rounded-t-xl sm:rounded-t-2xl flex justify-between items-start sm:items-center gap-3 z-10">
+          <div className="flex-1">
+            <h2 className="text-xl sm:text-2xl font-bold text-stone-800 font-serif leading-tight">
               Reservar {habitacion}
             </h2>
-            <p className="text-sm text-stone-600 mt-1">
+            <p className="text-xs sm:text-sm text-stone-600 mt-1">
               Completa el formulario para solicitar tu reserva
             </p>
           </div>
           <button
             onClick={onClose}
-            className="text-stone-400 hover:text-stone-800 transition-colors p-2 hover:bg-stone-100 rounded-full"
+            className="text-stone-400 hover:text-stone-800 transition-colors p-1.5 sm:p-2 hover:bg-stone-100 rounded-full shrink-0"
+            aria-label="Cerrar"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
 
         {/* Formulario */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4">
           {success ? (
-            <div className="bg-green-50 border-2 border-green-500 rounded-lg p-6 text-center">
-              <p className="text-green-800 text-lg font-semibold mb-2">
+            <div className="bg-green-50 border-2 border-green-500 rounded-lg p-4 sm:p-6 text-center">
+              <p className="text-green-800 text-base sm:text-lg font-semibold mb-2">
                 ¡Reserva enviada exitosamente!
               </p>
-              <p className="text-green-700">
+              <p className="text-sm sm:text-base text-green-700">
                 Te hemos enviado un correo de confirmación. Nos pondremos en
                 contacto contigo pronto.
               </p>
@@ -133,7 +134,7 @@ export default function ReservaModal({
           ) : (
             <>
               {error && (
-                <div className="bg-red-50 border-2 border-red-500 rounded-lg p-4 text-red-800">
+                <div className="bg-red-50 border-2 border-red-500 rounded-lg p-3 sm:p-4 text-sm sm:text-base text-red-800">
                   {error}
                 </div>
               )}

@@ -38,21 +38,21 @@ export default function ServiciosPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-linear-to-br from-stone-100 to-white py-20 px-6">
+      <section className="bg-linear-to-br from-stone-100 to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-stone-800 mb-6 font-serif">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
             Nuestros Servicios
           </h1>
-          <p className="text-xl text-stone-600">
+          <p className="text-lg sm:text-xl text-stone-600">
             Todo lo que necesitas para una estadía perfecta
           </p>
         </div>
       </section>
 
       {/* Servicios Grid */}
-      <section className=" px-6">
+      <section className="py-8 sm:py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {servicios.map((servicio, index) => (
               <div
                 key={index}
@@ -72,17 +72,17 @@ export default function ServiciosPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-stone-50">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-stone-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-6 font-serif">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
             ¿Listo para tu escapada rural?
           </h2>
-          <p className="text-lg text-stone-600 mb-8">
+          <p className="text-base sm:text-lg text-stone-600 mb-6 sm:mb-8">
             Reserva ahora y disfruta de todos nuestros servicios
           </p>
           <a
             href="/contacto"
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl"
           >
             Contactar Ahora
           </a>

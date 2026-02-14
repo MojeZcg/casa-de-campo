@@ -50,20 +50,24 @@ export default function DormitoriosPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-linear-to-br from-stone-100 to-white py-20 px-6">
+      <section className="bg-linear-to-br from-stone-100 to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-stone-800 mb-6 font-serif">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
             Nuestras Habitaciones
           </h1>
-          <p className="text-xl text-stone-600 mb-4">
+          <p className="text-lg sm:text-xl text-stone-600 mb-4">
             Alojamiento completo con dos habitaciones confortables
           </p>
-          <div className="mt-8 flex flex-col items-center gap-3">
-            <p className="text-3xl font-bold text-stone-800">{precioTotal}</p>
-            <p className="text-lg text-stone-600">{capacidadTotal}</p>
+          <div className="mt-6 sm:mt-8 flex flex-col items-center gap-2 sm:gap-3">
+            <p className="text-2xl sm:text-3xl font-bold text-stone-800">
+              {precioTotal}
+            </p>
+            <p className="text-base sm:text-lg text-stone-600">
+              {capacidadTotal}
+            </p>
             <button
               onClick={() => setModalOpen(true)}
-              className="mt-4 px-8 py-4 text-lg font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg"
+              className="mt-3 sm:mt-4 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg"
             >
               Reservar Ahora
             </button>
@@ -72,12 +76,12 @@ export default function DormitoriosPage() {
       </section>
 
       {/* Descripción de las habitaciones */}
-      <section className="py-12 px-6">
+      <section className="py-8 sm:py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-12 text-center font-serif">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-800 mb-8 sm:mb-12 text-center font-serif">
             Distribución de las Habitaciones
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             {habitaciones.map((habitacion, index) => (
               <div
                 key={index}
@@ -144,7 +148,7 @@ export default function DormitoriosPage() {
               </p>
               <button
                 onClick={() => setModalOpen(true)}
-                className="px-8 py-4 text-lg font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg"
               >
                 Reservar Ahora
               </button>
@@ -154,12 +158,12 @@ export default function DormitoriosPage() {
       </section>
 
       {/* Política */}
-      <section className="pt-10 pb-20 px-6">
+      <section className="pt-8 sm:pt-10 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-6 font-serif">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
             Información Importante
           </h2>
-          <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto">
             El precio incluye el alojamiento completo con acceso a ambas
             habitaciones. Todos los servicios mencionados están incluidos sin
             costo adicional. Ideal para familias o grupos de hasta 6 personas.

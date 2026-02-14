@@ -1,32 +1,24 @@
-"use client";
-
-import { useState } from "react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export default function LocalizacionPage() {
-  const [activeTab, setActiveTab] = useState<"es" | "en">("es");
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className=" bg-white">
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-stone-100 to-white py-20 px-6">
+      <section className="relative bg-linear-to-br from-stone-100 to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-stone-800 mb-6 font-serif">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
             Localización
           </h1>
-          <p className="text-xl md:text-2xl text-stone-600 mb-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-stone-600 mb-3 sm:mb-4">
             Estamos ubicados en las afueras de la ciudad
-          </p>
-          <p className="text-lg text-stone-500 italic">
-            Es fácil encontrarnos pero difícil dejarnos
           </p>
         </div>
       </section>
 
       {/* Map Section */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:py-12">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <h2 className="text-3xl font-bold text-stone-800 p-6 pb-4 font-serif">
+          <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 p-4 sm:p-6 pb-3 sm:pb-4 font-serif">
             Mapa y Ubicación
           </h2>
           <div className="aspect-video">
@@ -41,18 +33,20 @@ export default function LocalizacionPage() {
               title="Ubicación Casa Campo Jorge - San Rafael, Mendoza"
             ></iframe>
           </div>
-          <div className="p-6 bg-stone-50">
+          <div className="p-4 sm:p-6 bg-stone-50">
             <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-stone-700 mt-1" />
+              <MapPin className="w-5 h-5 text-stone-700 mt-1 shrink-0" />
               <div>
-                <p className="font-semibold text-stone-800">
+                <p className="font-semibold text-stone-800 text-sm sm:text-base">
                   Dirección exacta:
                 </p>
-                <p className="text-stone-600">
+                <p className="text-stone-600 text-sm sm:text-base">
                   Calle Andreoni s/n, Colonia Elena - Cuadro Nacional
                 </p>
-                <p className="text-stone-600">San Rafael, Mendoza</p>
-                <p className="text-sm text-stone-500 mt-2">
+                <p className="text-stone-600 text-sm sm:text-base">
+                  San Rafael, Mendoza
+                </p>
+                <p className="text-xs sm:text-sm text-stone-500 mt-2">
                   Coordenadas: -34.575202, -68.098789
                 </p>
               </div>
