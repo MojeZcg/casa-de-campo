@@ -1,10 +1,11 @@
-import { MapPin } from "lucide-react";
+import { MapPin, Navigation } from "lucide-react";
+import Link from "next/link";
 
 export default function LocalizacionPage() {
   return (
     <div className=" bg-white">
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-stone-100 to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section className="relative bg-linear-to-br from-stone-100 to-white pt-12 pb-8 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
             Localización
@@ -50,6 +51,17 @@ export default function LocalizacionPage() {
                   Coordenadas: -34.575202, -68.098789
                 </p>
               </div>
+            </div>
+            <div className="mt-4 pb-4 px-4 sm:px-6">
+              <Link
+                href="https://www.google.com/maps?q=-34.575202,-68.098789"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 text-base font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl"
+              >
+                <Navigation className="w-5 h-5 mr-2" />
+                Cómo llegar
+              </Link>
             </div>
           </div>
         </div>

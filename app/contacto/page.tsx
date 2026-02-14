@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Navigation } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactoPage() {
   const [formData, setFormData] = useState({
@@ -257,17 +258,30 @@ export default function ContactoPage() {
               </div>
 
               {/* Mapa de Google Maps */}
-              <div className="mt-6 sm:mt-8 rounded-lg overflow-hidden shadow-lg h-48 sm:h-64">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3295.7!2d-68.098789!3d-34.575202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM0JzMwLjciUyA2OMKwMDUnNTUuNiJX!5e0!3m2!1ses!2sar!4v1234567890!5m2!1ses!2sar"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicación Casa Campo Jorge"
-                ></iframe>
+              <div className="mt-6 sm:mt-8">
+                <div className="rounded-lg overflow-hidden shadow-lg h-48 sm:h-64">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3295.7!2d-68.098789!3d-34.575202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM0JzMwLjciUyA2OMKwMDUnNTUuNiJX!5e0!3m2!1ses!2sar!4v1234567890!5m2!1ses!2sar"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Ubicación Casa Campo Jorge"
+                  ></iframe>
+                </div>
+                <div className="mt-4">
+                  <Link
+                    href="https://www.google.com/maps?q=-34.575202,-68.098789"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 text-base font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl"
+                  >
+                    <Navigation className="w-5 h-5 mr-2" />
+                    Cómo llegar
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
