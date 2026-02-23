@@ -71,7 +71,7 @@ export default function ContactoPage() {
       {/* Hero */}
       <section className="bg-linear-to-br from-stone-100 to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6">
             Contacto
           </h1>
           <p className="text-lg sm:text-xl text-stone-600">
@@ -86,7 +86,7 @@ export default function ContactoPage() {
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
             {/* Formulario */}
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
+              <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 mb-4 sm:mb-6">
                 Envíanos un mensaje
               </h2>
 
@@ -186,7 +186,7 @@ export default function ContactoPage() {
 
             {/* Información de contacto */}
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
+              <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 mb-4 sm:mb-6">
                 Información de Contacto
               </h2>
               <div className="space-y-4 sm:space-y-6">
@@ -222,7 +222,7 @@ export default function ContactoPage() {
                       2615064907
                     </p>
                     <p className="text-sm sm:text-base text-stone-600">
-                      2604595311
+                      2616951981
                     </p>
                   </div>
                 </div>
@@ -273,7 +273,7 @@ export default function ContactoPage() {
                 </div>
                 <div className="mt-4">
                   <Link
-                    href="https://www.google.com/maps?q=-34.575202,-68.098789"
+                    href="https://maps.app.goo.gl/oUqvt1vqWDKqEeWGA"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 text-base font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl"

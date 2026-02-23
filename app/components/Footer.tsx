@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 sm:gap-12 md:gap-20">
           {/* Sobre Nosotros */}
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 font-serif">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
               Alojamiento Rural - San Rafael
             </h3>
             <p className="text-sm sm:text-base text-stone-300 mb-3 sm:mb-4 leading-relaxed">
@@ -37,32 +37,32 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-stone-400 shrink-0 mt-0.5" />
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
-                  <a
+                  <Link
                     href="tel:+542615064907"
                     className="text-sm sm:text-base text-stone-300 hover:text-white transition"
                   >
                     2615064907
-                  </a>
+                  </Link>
                   <span className="hidden sm:inline text-stone-500 mx-2">
                     •
                   </span>
-                  <a
-                    href="tel:+542604595311"
+                  <Link
+                    href="tel:+542616951981"
                     className="text-sm sm:text-base text-stone-300 hover:text-white transition"
                   >
-                    2604595311
-                  </a>
+                    2616951981
+                  </Link>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-stone-400 shrink-0 mt-0.5" />
-                <a
+                <Link
                   href="mailto:alojamientorural11@gmail.com"
                   className="text-sm sm:text-base text-stone-300 hover:text-white transition break-all"
                 >
                   alojamientorural11@gmail.com
-                </a>
+                </Link>
               </div>
 
               <div className="flex items-center gap-3">

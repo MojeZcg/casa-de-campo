@@ -9,27 +9,47 @@ import ReservaModal from "./components/ReservaModal";
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen  bg-white">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-12 flex items-center justify-center px-4 sm:px-6 bg-linear-to-br from-stone-50 to-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
-            Alojamiento Rural
+      <section className="relative pt-16 pb-20 flex items-center justify-center px-4 sm:px-6 bg-linear-to-br from-stone-50 via-stone-100/30 to-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-stone-800 mb-3 tracking-tight">
+            NUESTRA CASA
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl text-stone-600 mb-6 sm:mb-8 italic">
-            Ubicado en San Rafael, Mendoza, Argentina.
-          </p>
-          <p className="text-base sm:text-lg md:text-xl text-stone-600 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4">
-            Descubre la tranquilidad del campo en nuestro acogedor alojamiento
-            rural. Un lugar donde el tiempo se detiene y la naturaleza te
-            abraza.
-          </p>
+          <div className="w-24 h-1 bg-stone-800 mx-auto mb-8"></div>
+
+          <div className="max-w-4xl mx-auto mb-12 text-left">
+            <div className="bg-white/90 border border-stone-200 rounded-2xl p-5 sm:p-7 md:p-8 shadow-sm">
+              <div className="space-y-4 text-base sm:text-lg text-stone-700 leading-relaxed">
+                <p>
+                  La casa está totalmente equipada para ofrecer una estadía
+                  cómoda y de calidad, ideal para descansar y conectar con la
+                  naturaleza.
+                </p>
+                <p>
+                  Se encuentra en un amplio y verdoso predio donde conviven
+                  animales de granja, como ovejas y caballo, junto a especies
+                  autóctonas de la zona. El entorno invita a disfrutar del aire
+                  libre, los atardeceres abiertos y la tranquilidad del campo.
+                </p>
+                <p>
+                  El predio cuenta con árboles frutales y sectores de cultivo.
+                  Según la época del año, los huéspedes pueden encontrar frutas
+                  y verduras de estación.
+                </p>
+                <p className="font-medium text-stone-800">
+                  Un espacio pensado para relajarse, compartir y vivir San
+                  Rafael con calma.
+                </p>
+              </div>
+            </div>
+          </div>
 
           {/* Navigation Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/dormitorios"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               <HomeIcon className="w-5 h-5 mr-2" />
               Ver Dormitorios
@@ -37,7 +57,7 @@ export default function Home() {
 
             <Link
               href="/servicios"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-stone-800 bg-white border-2 border-stone-800 rounded-lg hover:bg-stone-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold text-stone-800 bg-white border-2 border-stone-800 rounded-lg hover:bg-stone-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               Nuestros Servicios
             </Link>
@@ -48,7 +68,7 @@ export default function Home() {
       {/* Galería de la Propiedad */}
       <section className="pt-8 sm:pt-12 pb-8 sm:pb-12 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-800 text-center mb-3 sm:mb-4 font-serif">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-800 text-center mb-3 sm:mb-4">
             Conoce Nuestra Propiedad
           </h2>
           <p className="text-lg sm:text-xl text-stone-600 text-center mb-8 sm:mb-12 px-4">
@@ -57,7 +77,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
             {/* Foto Principal - Foto 1 */}
-            <div className="md:row-span-2 relative h-[400px] sm:h-[500px] md:h-full overflow-hidden rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl group">
+            <div className="md:row-span-2 relative h-100 sm:h-125 md:h-full overflow-hidden rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl group">
               <Image
                 src="/1.jpeg"
                 alt="Vista principal de la casa de campo"
@@ -73,7 +93,7 @@ export default function Home() {
             </div>
 
             {/* Foto 2 */}
-            <div className="relative h-[180px] sm:h-[240px] overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl group">
+            <div className="relative h-45 sm:h-60 overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl group">
               <Image
                 src="/2.jpeg"
                 alt="Interior acogedor de la casa rural"
@@ -88,7 +108,7 @@ export default function Home() {
             </div>
 
             {/* Foto 4 */}
-            <div className="relative h-[180px] sm:h-[240px] overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl group">
+            <div className="relative h-45 sm:h-60  overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl group">
               <Image
                 src="/4.jpeg"
                 alt="Espacios de la casa de campo"
@@ -105,10 +125,126 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Actividades y Paseos */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-linear-to-b from-stone-50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-800 text-center mb-3 sm:mb-4">
+            Actividades y Paseos
+          </h2>
+          <div className="w-20 h-1 bg-stone-800 mx-auto mb-5 sm:mb-6"></div>
+          <p className="text-lg sm:text-xl text-stone-600 text-center mb-8 sm:mb-12 max-w-3xl mx-auto">
+            Experiencias recomendadas para descubrir San Rafael entre
+            naturaleza, aventura y tradición.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-5 sm:gap-6">
+            <article className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300 lg:col-span-2">
+              <div className="relative h-52 sm:h-56 overflow-hidden">
+                <Image
+                  src="/Actividades/caballo.jpg"
+                  alt="Paseos a caballo"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5 sm:p-6">
+                <h3 className="text-xl font-bold text-stone-800 mb-2">
+                  Paseos a Caballo
+                </h3>
+                <p className="text-stone-600 leading-relaxed">
+                  Recorridos tranquilos entre paisajes rurales para conectar con
+                  la naturaleza y vivir el campo de cerca.
+                </p>
+              </div>
+            </article>
+
+            <article className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300 lg:col-span-2">
+              <div className="relative h-52 sm:h-56 overflow-hidden">
+                <Image
+                  src="/Actividades/vino.jpg"
+                  alt="Circuitos del vino y del espumante"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5 sm:p-6">
+                <h3 className="text-xl font-bold text-stone-800 mb-2">
+                  Circuitos del Vino y del Espumante
+                </h3>
+                <p className="text-stone-600 leading-relaxed">
+                  Visitas a bodegas y casas de espumantes para conocer sabores,
+                  procesos y la identidad vitivinícola de la región.
+                </p>
+              </div>
+            </article>
+
+            <article className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300 lg:col-span-2">
+              <div className="relative h-52 sm:h-56 overflow-hidden">
+                <Image
+                  src="/Actividades/atuel.jpg"
+                  alt="Cañón del Atuel"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5 sm:p-6">
+                <h3 className="text-xl font-bold text-stone-800 mb-2">
+                  Cañón del Atuel
+                </h3>
+                <p className="text-stone-600 leading-relaxed">
+                  Uno de los paisajes más emblemáticos de Mendoza, ideal para
+                  excursiones panorámicas y fotografía.
+                </p>
+              </div>
+            </article>
+
+            <article className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300 lg:col-span-2 lg:col-start-2">
+              <div className="relative h-52 sm:h-56 overflow-hidden">
+                <Image
+                  src="/Actividades/diamante.webp"
+                  alt="Valle del Diamante"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5 sm:p-6">
+                <h3 className="text-xl font-bold text-stone-800 mb-2">
+                  Diamante
+                </h3>
+                <p className="text-stone-600 leading-relaxed">
+                  Zona de belleza natural con escenarios de montaña, perfecta
+                  para recorrer y disfrutar del aire libre.
+                </p>
+              </div>
+            </article>
+
+            <article className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300 sm:col-span-2 lg:col-span-2 lg:col-start-4">
+              <div className="relative h-52 sm:h-56 overflow-hidden">
+                <Image
+                  src="/Actividades/sosneado.jpg"
+                  alt="El Sosneado"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5 sm:p-6">
+                <h3 className="text-xl font-bold text-stone-800 mb-2">
+                  El Sosneado
+                </h3>
+                <p className="text-stone-600 leading-relaxed">
+                  Destino de montaña con paisajes únicos y propuestas de
+                  aventura para quienes buscan una salida diferente.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* Reserva Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-stone-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 font-serif">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Reserva tu Estadía
           </h2>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-stone-200 px-4">
@@ -135,7 +271,7 @@ export default function Home() {
       {/* Features Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-stone-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-800 text-center mb-10 sm:mb-12 md:mb-16 font-serif">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-800 text-center mb-10 sm:mb-12 md:mb-16">
             Experiencia Rural Auténtica
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">

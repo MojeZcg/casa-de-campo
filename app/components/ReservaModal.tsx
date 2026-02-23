@@ -103,7 +103,7 @@ export default function ReservaModal({
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-stone-200 p-4 sm:p-6 rounded-t-xl sm:rounded-t-2xl flex justify-between items-start sm:items-center gap-3 z-10">
           <div className="flex-1">
-            <h2 className="text-xl sm:text-2xl font-bold text-stone-800 font-serif leading-tight">
+            <h2 className="text-xl sm:text-2xl font-bold text-stone-800 leading-tight">
               Reservar {habitacion}
             </h2>
             <p className="text-xs sm:text-sm text-stone-600 mt-1">

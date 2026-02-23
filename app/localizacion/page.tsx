@@ -7,7 +7,7 @@ export default function LocalizacionPage() {
       {/* Hero Section */}
       <section className="relative bg-linear-to-br from-stone-100 to-white pt-12 pb-8 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6">
             Localización
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-stone-600 mb-3 sm:mb-4">
@@ -19,7 +19,7 @@ export default function LocalizacionPage() {
       {/* Map Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:py-12">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 p-4 sm:p-6 pb-3 sm:pb-4 font-serif">
+          <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 p-4 sm:p-6 pb-3 sm:pb-4">
             Mapa y Ubicación
           </h2>
           <div className="aspect-video">
@@ -54,7 +54,7 @@ export default function LocalizacionPage() {
             </div>
             <div className="mt-4 pb-4 px-4 sm:px-6">
               <Link
-                href="https://www.google.com/maps?q=-34.575202,-68.098789"
+                href="https://maps.app.goo.gl/oUqvt1vqWDKqEeWGA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 text-base font-semibold text-white bg-stone-800 rounded-lg hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl"

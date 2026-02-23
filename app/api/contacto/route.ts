@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
           <div style="margin: 20px 0;">
             <h3 style="color: #292524;">Información de Contacto</h3>
             <p><strong>Dirección:</strong> Calle Andreoni s/n, San Rafael, Mendoza</p>
-            <p><strong>Teléfono:</strong> 2615064907 / 2604595311</p>
+            <p><strong>Teléfono:</strong> 2615064907 / 2616951981</p>
             <p><strong>Email:</strong> alojamientorural11@gmail.com</p>
             <p><strong>Horario:</strong> Atención 24/7</p>
           </div>

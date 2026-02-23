@@ -52,7 +52,7 @@ export default function DormitoriosPage() {
       {/* Hero */}
       <section className="bg-linear-to-br from-stone-100 to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6">
             Nuestras Habitaciones
           </h1>
           <p className="text-lg sm:text-xl text-stone-600 mb-4">
@@ -78,7 +78,7 @@ export default function DormitoriosPage() {
       {/* Descripción de las habitaciones */}
       <section className="py-8 sm:py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-800 mb-8 sm:mb-12 text-center font-serif">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-800 mb-8 sm:mb-12 text-center">
             Distribución de las Habitaciones
           </h2>
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
@@ -99,7 +99,7 @@ export default function DormitoriosPage() {
 
                 {/* Contenido */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-stone-800 mb-2 font-serif">
+                  <h3 className="text-2xl font-bold text-stone-800 mb-2">
                     {habitacion.nombre}
                   </h3>
                   <p className="text-lg text-stone-600 mb-4">
@@ -127,7 +127,7 @@ export default function DormitoriosPage() {
       {/* Servicios Incluidos */}
       <section className="py-12 px-6 bg-stone-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-8 text-center font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-8 text-center">
             Servicios Incluidos en el Precio
           </h2>
           <div className="bg-white border-2 border-stone-200 rounded-lg p-8">
@@ -160,7 +160,7 @@ export default function DormitoriosPage() {
       {/* Política */}
       <section className="pt-8 sm:pt-10 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-800 mb-4 sm:mb-6 font-serif">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-800 mb-4 sm:mb-6">
             Información Importante
           </h2>
           <p className="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto">

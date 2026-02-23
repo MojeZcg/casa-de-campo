@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const font = Roboto_Condensed({
+  weight: ["300", "700"],
+  variable: "--font",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.alojamientorural.com.ar"),
   title: "Alojamiento Rural | San Rafael, Mendoza",
   description:
     "Descubre la tranquilidad del campo en nuestro acogedor alojamiento rural. Un lugar donde el tiempo se detiene y la naturaleza te abraza.",
@@ -54,9 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es_AR">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
-      >
+      <body className={`${font.className} antialiased bg-white`}>
         <Navigation />
         {children}
         <Footer />
