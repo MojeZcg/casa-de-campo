@@ -88,7 +88,7 @@ export default function DormitoriosPage() {
                 className="bg-white border-2 border-stone-200 rounded-lg overflow-hidden hover:shadow-xl transition-all"
               >
                 {/* Imagen */}
-                <div className="relative h-54 w-full overflow-hidden">
+                <div className="relative h-56 w-full overflow-hidden">
                   <Image
                     src={habitacion.imagen || "/habitacion-placeholder.jpg"}
                     alt={habitacion.nombre}
@@ -125,12 +125,12 @@ export default function DormitoriosPage() {
       </section>
 
       {/* Servicios Incluidos */}
-      <section className="py-12 px-6 bg-stone-50">
+      <section className="py-12 px-4 sm:px-6 bg-stone-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-800 mb-8 text-center">
             Servicios Incluidos en el Precio
           </h2>
-          <div className="bg-white border-2 border-stone-200 rounded-lg p-8">
+          <div className="bg-white border-2 border-stone-200 rounded-lg p-5 sm:p-8">
             <ul className="grid md:grid-cols-2 gap-4">
               {serviciosIncluidos.map((servicio, i) => (
                 <li key={i} className="flex items-center text-stone-600">

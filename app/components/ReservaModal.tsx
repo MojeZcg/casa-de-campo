@@ -283,7 +283,7 @@ export default function ReservaModal({
                 ></textarea>
               </div>
 
-              <div className="flex gap-3 pt-4 border-t border-stone-200 mt-6">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-stone-200 mt-6">
                 <button
                   type="button"
                   onClick={onClose}

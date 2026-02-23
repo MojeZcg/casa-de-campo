@@ -13,35 +13,32 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-16 pb-20 flex items-center justify-center px-4 sm:px-6 bg-linear-to-br from-stone-50 via-stone-100/30 to-white">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-stone-800 mb-3 tracking-tight">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-stone-800 mb-3 tracking-tight">
             NUESTRA CASA
           </h1>
           <div className="w-24 h-1 bg-stone-800 mx-auto mb-8"></div>
 
-          <div className="max-w-4xl mx-auto mb-12 text-left">
-            <div className="bg-white/90 border border-stone-200 rounded-2xl p-5 sm:p-7 md:p-8 shadow-sm">
-              <div className="space-y-4 text-base sm:text-lg text-stone-700 leading-relaxed">
-                <p>
-                  La casa está totalmente equipada para ofrecer una estadía
-                  cómoda y de calidad, ideal para descansar y conectar con la
-                  naturaleza.
-                </p>
-                <p>
-                  Se encuentra en un amplio y verdoso predio donde conviven
-                  animales de granja, como ovejas y caballo, junto a especies
-                  autóctonas de la zona. El entorno invita a disfrutar del aire
-                  libre, los atardeceres abiertos y la tranquilidad del campo.
-                </p>
-                <p>
-                  El predio cuenta con árboles frutales y sectores de cultivo.
-                  Según la época del año, los huéspedes pueden encontrar frutas
-                  y verduras de estación.
-                </p>
-                <p className="font-medium text-stone-800">
-                  Un espacio pensado para relajarse, compartir y vivir San
-                  Rafael con calma.
-                </p>
-              </div>
+          <div className="max-w-3xl mx-auto mb-12 text-left">
+            <div className="space-y-5 text-base sm:text-lg text-stone-700 leading-8 sm:leading-9">
+              <p className="text-stone-800">
+                La casa está totalmente equipada para ofrecer una estadía cómoda
+                y de calidad, ideal para descansar y conectar con la naturaleza.
+              </p>
+              <p>
+                Se encuentra en un amplio y verdoso predio donde conviven
+                animales de granja, como ovejas y caballo, junto a especies
+                autóctonas de la zona. El entorno invita a disfrutar del aire
+                libre, los atardeceres abiertos y la tranquilidad del campo.
+              </p>
+              <p>
+                El predio cuenta con árboles frutales y sectores de cultivo.
+                Según la época del año, los huéspedes pueden encontrar frutas y
+                verduras de estación.
+              </p>
+              <p className="font-medium text-stone-800 pt-1">
+                Un espacio pensado para relajarse, compartir y vivir San Rafael
+                con calma.
+              </p>
             </div>
           </div>
 
@@ -77,7 +74,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
             {/* Foto Principal - Foto 1 */}
-            <div className="md:row-span-2 relative h-100 sm:h-125 md:h-full overflow-hidden rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl group">
+            <div className="md:row-span-2 relative h-72 sm:h-96 md:h-full overflow-hidden rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl group">
               <Image
                 src="/1.jpeg"
                 alt="Vista principal de la casa de campo"
@@ -93,7 +90,7 @@ export default function Home() {
             </div>
 
             {/* Foto 2 */}
-            <div className="relative h-45 sm:h-60 overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl group">
+            <div className="relative h-56 sm:h-60 overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl group">
               <Image
                 src="/2.jpeg"
                 alt="Interior acogedor de la casa rural"
@@ -108,7 +105,7 @@ export default function Home() {
             </div>
 
             {/* Foto 4 */}
-            <div className="relative h-45 sm:h-60  overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl group">
+            <div className="relative h-56 sm:h-60  overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl group">
               <Image
                 src="/4.jpeg"
                 alt="Espacios de la casa de campo"

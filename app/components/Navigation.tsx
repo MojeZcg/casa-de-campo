@@ -19,10 +19,10 @@ export default function Navigation() {
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className=" relative px-4 sm:px-6 py-1">
+      <div className="relative px-4 sm:px-6 py-1">
         <Link
           href="/"
-          className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 font-bold text-stone-800 leading-tight tracking-wide transition-opacity hover:opacity-80"
+          className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 font-bold text-stone-800 leading-tight tracking-wide transition-opacity hover:opacity-80 z-10"
         >
           <span className="hidden sm:inline text-base md:text-xl">
             <span className="block">Virgen de Lourdes</span>
@@ -30,11 +30,11 @@ export default function Navigation() {
               Alojamiento Rural
             </span>
           </span>
-          <span className="sm:hidden text-base font-semibold">
+          <span className="sm:hidden text-sm font-semibold">
             Alojamiento Rural
           </span>
         </Link>
-        <div className="flex justify-center items-center h-16 sm:h-20">
+        <div className="flex justify-end md:justify-center items-center h-16 sm:h-20">
           {/* Logo */}
 
           {/* Desktop Navigation */}
@@ -56,7 +56,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-stone-100 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-stone-100 transition-colors ml-auto"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >

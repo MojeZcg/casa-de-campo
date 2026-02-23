@@ -38,7 +38,7 @@ export default function ServiciosPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-linear-to-br from-stone-100 to-white py-12 sm:py-16 md:py-16 px-4 sm:px-6">
+      <section className="bg-linear-to-br from-stone-100 to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 sm:mb-6">
             Nuestros Servicios
@@ -50,18 +50,18 @@ export default function ServiciosPage() {
       </section>
 
       {/* Servicios Grid */}
-      <section className=" px-4 sm:px-6">
+      <section className="py-8 sm:py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {servicios.map((servicio, index) => (
               <div
                 key={index}
-                className="bg-white border-2 border-stone-200 rounded-lg p-8 hover:shadow-xl transition-all hover:border-stone-400"
+                className="bg-white border-2 border-stone-200 rounded-lg p-6 sm:p-8 hover:shadow-xl transition-all hover:border-stone-400"
               >
                 <div className="w-16 h-16 mb-3 text-stone-700">
                   {servicio.icono}
                 </div>
-                <h3 className="text-2xl font-bold text-stone-800 mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-stone-800 mb-3">
                   {servicio.titulo}
                 </h3>
                 <p className="text-stone-600">{servicio.descripcion}</p>

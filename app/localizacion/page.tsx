@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function LocalizacionPage() {
   return (
-    <div className=" bg-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative bg-linear-to-br from-stone-100 to-white pt-12 pb-8 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto text-center">
@@ -52,7 +52,7 @@ export default function LocalizacionPage() {
                 </p>
               </div>
             </div>
-            <div className="mt-4 pb-4 px-4 sm:px-6">
+            <div className="mt-4">
               <Link
                 href="https://maps.app.goo.gl/oUqvt1vqWDKqEeWGA"
                 target="_blank"
