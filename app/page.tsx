@@ -138,7 +138,7 @@ export default function Home() {
             <article className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300 lg:col-span-2">
               <div className="relative h-52 sm:h-56 overflow-hidden">
                 <Image
-                  src="/Actividades/caballo.jpg"
+                  src="/Actividades/caballo.webp"
                   alt="Paseos a caballo"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -158,7 +158,7 @@ export default function Home() {
             <article className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300 lg:col-span-2">
               <div className="relative h-52 sm:h-56 overflow-hidden">
                 <Image
-                  src="/Actividades/vino.jpg"
+                  src="/Actividades/vino.webp"
                   alt="Circuitos del vino y del espumante"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -178,7 +178,7 @@ export default function Home() {
             <article className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300 lg:col-span-2">
               <div className="relative h-52 sm:h-56 overflow-hidden">
                 <Image
-                  src="/Actividades/atuel.jpg"
+                  src="/Actividades/atuel.webp"
                   alt="Cañón del Atuel"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -218,7 +218,7 @@ export default function Home() {
             <article className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300 sm:col-span-2 lg:col-span-2 lg:col-start-4">
               <div className="relative h-52 sm:h-56 overflow-hidden">
                 <Image
-                  src="/Actividades/sosneado.jpg"
+                  src="/Actividades/sosneado.webp"
                   alt="El Sosneado"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
