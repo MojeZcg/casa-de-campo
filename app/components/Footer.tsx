@@ -66,7 +66,7 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-stone-400 shrink-0 mt-0.5" />
                 <Link
                   href="mailto:alojamientorural11@gmail.com"
-                  className="text-sm sm:text-base hover:underline  text-stone-300 hover:text-white transition break-all"
+                  className="text-sm sm:text-base hover:underline text-stone-300 hover:text-white transition break-all"
                 >
                   alojamientorural11@gmail.com
                 </Link>
@@ -90,31 +90,31 @@ export default function Footer() {
             <nav className="space-y-2">
               <Link
                 href="/"
-                className="block text-stone-300 hover:text-white transition"
+                className="block hover:underline text-stone-300 hover:text-white transition"
               >
                 Inicio
               </Link>
               <Link
                 href="/servicios"
-                className="block text-stone-300 hover:text-white transition"
+                className="block hover:underline text-stone-300 hover:text-white transition"
               >
                 Servicios
               </Link>
               <Link
                 href="/dormitorios"
-                className="block text-stone-300 hover:text-white transition"
+                className="block hover:underline text-stone-300 hover:text-white transition"
               >
                 Dormitorios
               </Link>
               <Link
                 href="/localizacion"
-                className="block text-stone-300 hover:text-white transition"
+                className="block hover:underline text-stone-300 hover:text-white transition"
               >
                 Localización
               </Link>
               <Link
                 href="/contacto"
-                className="block text-stone-300 hover:text-white transition"
+                className="block hover:underline text-stone-300 hover:text-white transition"
               >
                 Contacto
               </Link>
