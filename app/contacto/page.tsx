@@ -198,8 +198,9 @@ export default function ContactoPage() {
                     <h3 className="font-semibold text-sm sm:text-base text-stone-800 mb-1">
                       Dirección
                     </h3>
+
                     <p className="text-sm sm:text-base text-stone-600">
-                      Calle Andreoni s/n
+                      Calle Lozano s/n
                     </p>
                     <p className="text-sm sm:text-base text-stone-600">
                       Colonia Elena - Cuadro Nacional
@@ -207,6 +208,14 @@ export default function ContactoPage() {
                     <p className="text-sm sm:text-base text-stone-600">
                       San Rafael, Mendoza
                     </p>
+                    <Link
+                      href="https://maps.app.goo.gl/oUqvt1vqWDKqEeWGA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm sm:text-base text-stone-600 underline"
+                    >
+                      Ver en Google Maps
+                    </Link>
                   </div>
                 </div>
 

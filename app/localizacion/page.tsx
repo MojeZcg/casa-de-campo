@@ -42,10 +42,7 @@ export default function LocalizacionPage() {
                   Dirección exacta:
                 </p>
                 <p className="text-stone-600 text-sm sm:text-base">
-                  Calle Andreoni s/n, Colonia Elena - Cuadro Nacional
-                </p>
-                <p className="text-stone-600 text-sm sm:text-base">
-                  San Rafael, Mendoza
+                  Calle Lozano s/n, San Rafael, Mendoza
                 </p>
                 <p className="text-xs sm:text-sm text-stone-500 mt-2">
                   Coordenadas: -34.575202, -68.098789
